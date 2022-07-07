@@ -1,17 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+:root {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+body {
+  background: url(./img/eren-gif.gif);
+  background-position: center;
+  background-size: auto;
+  backdrop-filter: blur(6px);
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .container {
   width: 28vw;
   height: fit-content;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   min-width: 300px;
-  margin-left: calc(50% - 28vh);
+  max-width: 400px;
   text-align: center;
-  border: 1px solid black;
+  border: 2px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,6 +40,11 @@
   z-index: 1;
   overflow: hidden;
   border-radius: 80px;
+  -webkit-box-shadow: 2px 1px 18px 12px #FFEC00; 
+  box-shadow: 2px 1px 16px 10px #FFEC00;
+  background-color: white;
+  background: rgb(255,246,0);
+  background: linear-gradient(90deg, rgba(255,246,0,0.9) 0%, rgba(208,204,0,0.9) 70%, rgba(175,168,1,0.9) 100%);
 }
 
 .profile img {
@@ -29,6 +54,10 @@
   border: 5px solid black;
 }
 
+.profile p {
+  font-weight: 500;
+}
+
 .container ul {
   list-style: none;
   padding: 10px;
@@ -36,23 +65,40 @@
 }
 
 .container li {
-  border: 1px solid black;
+  border: 2px solid black;
   padding: 8px;
   width: 200px;
   left: 50%;
   margin-top: 10px;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   display: flex;
+  border-radius: 30px;
+  
+}
+
+li a {
+  margin-left: 1rem;
+  margin-right: 4rem;
+  font-weight: bold;
+
 }
 
 li img {
   height: 20px;
-  margin-right: 5px;
+  margin-inline: 5px;
+  margin-left: 2.5rem;
 }
 
 li:hover {
-  background: blue;
+  background: #FAFF68;
+  transform: scale(1.1);
+}
+
+li a:hover {
+  background: #FAFF68;
+  color: white;
+  border-bottom: 1px solid black;
 }
 
 .container a {
@@ -63,7 +109,19 @@ li:hover {
 
 footer {
   text-align: center;
+  justify-content: center;
   width: 28vw;
   margin-left: calc(50% - 28vh);
-  margin-top: 8px;
+  padding-bottom: 16px;
+  margin-top: -10px;
+  color: black;
+  font-weight: 500;
+}
+
+footer a {
+  text-decoration: none;
+}
+footer a:hover {
+  border-bottom: 1px solid black;
+  color: white;
 }
