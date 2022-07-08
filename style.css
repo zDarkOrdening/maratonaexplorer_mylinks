@@ -28,7 +28,7 @@ body {
   width: 28vw;
   height: fit-content;
   margin-top: 0.5rem;
-  min-width: 300px;
+  min-width: 350px;
   max-width: 400px;
   text-align: center;
   border: 2px solid black;
@@ -45,6 +45,7 @@ body {
   background-color: white;
   background: rgb(255,246,0);
   background: linear-gradient(90deg, rgba(255,246,0,0.9) 0%, rgba(208,204,0,0.9) 70%, rgba(175,168,1,0.9) 100%);
+  animation: cardAnimation 0.8s ease-out 0s 1 normal forwards;
 }
 
 .profile img {
@@ -93,12 +94,14 @@ li img {
 li:hover {
   background: #FAFF68;
   transform: scale(1.1);
+  transition: 0.4s ease-out;
 }
 
 li a:hover {
   background: #FAFF68;
   color: white;
   border-bottom: 1px solid black;
+  transition: 0.4s ease-out;
 }
 
 .container a {
@@ -111,7 +114,8 @@ footer {
   text-align: center;
   justify-content: center;
   width: 28vw;
-  padding-bottom: 24px;
+  margin-left: calc(50% - 28vh);
+  padding-bottom: 16px;
   margin-top: -10px;
   color: black;
   font-weight: 500;
@@ -120,7 +124,64 @@ footer {
 footer a {
   text-decoration: none;
 }
+
+footer span {
+  animation: footerHeartAnimation 5s ease-in-out 0s infinite normal forwards;
+}
+
 footer a:hover {
   border-bottom: 1px solid black;
   color: white;
+  transition: 0.4s ease-out;
 }
+
+@keyframes cardAnimation {
+  0% {
+    opacity: 0;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+  20% {
+    opacity: 0.2;
+  }
+  40% {
+    opacity: 0.4;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    box-shadow: 2px 1px 16px 10px rgba(255, 236, 0, 1);
+    opacity: 1;
+  }
+
+}
+
+@keyframes footerHeartAnimation {
+	0%,
+	50%,
+	100% {
+		opacity: 1;
+	}
+
+	25%,
+	75% {
+		opacity: 0;
+	}
+}
+
+.textAnim {
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+  animation: 
+  typing 4s steps(40, end) infinite, .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
